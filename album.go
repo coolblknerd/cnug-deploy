@@ -1,10 +1,5 @@
 package main
 
-// Albums holds a collection of albums
-type Albums struct {
-	Albums []*Album `json:"albums"`
-}
-
 // Album is representative of a musical body of work from a artist
 type Album struct {
 	Artist string  `json:"artist"`
