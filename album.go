@@ -8,13 +8,3 @@ type Album struct {
 	Title  string  `json:"title"`
 	Year   float64 `json:"year"`
 }
-
-// NewAlbum creates a new instance of a album
-func NewAlbum(artist string, genre string, title string, year float64) *Album {
-	return &Album{
-		Artist: artist,
-		Genre:  genre,
-		Title:  title,
-		Year:   year,
-	}
-}
