@@ -14,4 +14,4 @@ steps:
     docker login -u $(dockerId) --password-stdin $(PSWD)
     docker push $(dockerId)/$(imageName)
   env:
-    PSWD: $(dockerPW)
+    PSWD: $(DOCKERPW)
