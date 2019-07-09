@@ -13,7 +13,8 @@ steps:
 - script: |
     docker build -t $(dockerId)/$(imageName) .
     env | sort
-    docker login -u $(dockerId) -p $(SOMETHING)
+    echo $(SOMETHING)
+    docker login -u $(dockerId) -p $SOMETHING
     docker push $(dockerId)/$(imageName)
   env:
-    SOMETHING: "$(dockerPW)"
+    SOMETHING: $(dockerPW)
