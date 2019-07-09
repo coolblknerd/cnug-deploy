@@ -13,5 +13,5 @@ steps:
     docker build -t $(dockerId)/$(imageName) .
     docker login -u $(dockerId) --password-stdin $(pswd)
     docker push $(dockerId)/$(imageName)
-  env:
+  variables:
     pswd: $(dockerPW)
