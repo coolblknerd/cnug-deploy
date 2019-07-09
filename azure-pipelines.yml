@@ -11,5 +11,7 @@ variables:
 steps:
 - script: |
     docker build -t $(dockerId)/$(imageName) .
-    docker login -u $(dockerId) --password-stdin $(dockerPW)
+    docker login -u $(dockerId) --password-stdin $(pswd)
     docker push $(dockerId)/$(imageName)
+  env:
+    pswd: $(dockerPW)
