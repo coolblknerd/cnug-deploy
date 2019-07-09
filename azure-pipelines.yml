@@ -12,7 +12,7 @@ variables:
 steps:
 - script: |
     docker build -t $(dockerId)/$(imageName) .
-    docker login -u $(dockerId) --password-stdin $(PSWD)
+    env
     docker push $(dockerId)/$(imageName)
   env:
-    PSWD: $(dockerPW)
+    SOMETHING: $(dockerPW)
