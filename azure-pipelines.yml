@@ -5,13 +5,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
+  group: DockerCreds
   dockerId: madblkman  
   imageName: cnug-deploy
 
 steps:
 - script: |
     docker build -t $(dockerId)/$(imageName) .
-    docker login -u $(dockerId) --password-stdin $(dockerPW)
+    docker login -u $(dockerId) --password-stdin $(PSWD)
     docker push $(dockerId)/$(imageName)
   env:
     PSWD: $(dockerPW)
